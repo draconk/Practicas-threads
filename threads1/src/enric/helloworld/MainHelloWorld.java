@@ -7,17 +7,11 @@ public class MainHelloWorld {
 
     public static void main(String[] args) {
 
-        HelloWorld hw1 = new HelloWorld();
-        HelloWorld hw2 = new HelloWorld();
-        HelloWorld hw3 = new HelloWorld();
-        HelloWorld hw4 = new HelloWorld();
-        HelloWorld hw5 = new HelloWorld();
+        for(int n = 0; n<5; n++){
+            new HelloWorld().start();
+        }
 
-        hw1.start();
-        hw2.start();
-        hw3.start();
-        hw4.start();
-        hw5.start();
+
 
     }
 }
