@@ -9,5 +9,6 @@ public class HelloWorld extends Thread{
     public void run() {
         System.out.println("Hello world " + Thread.currentThread());
         System.out.println("penes");
+        System.out.println("hola feo");
     }
 }
