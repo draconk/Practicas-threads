@@ -1,7 +1,9 @@
+package enric.helloworld;
+
 /**
  * Created by Enric on 04/12/2014.
  */
-public class Main {
+public class MainHelloWorld {
 
     public static void main(String[] args) {
 
