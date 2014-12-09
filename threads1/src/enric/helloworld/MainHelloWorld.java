@@ -11,7 +11,5 @@ public class MainHelloWorld {
             new HelloWorld().start();
         }
 
-
-
     }
 }
