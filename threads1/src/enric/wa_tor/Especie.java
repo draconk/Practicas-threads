@@ -8,5 +8,12 @@ public class Especie {
     String nombre;
     String sexo;
 
+    public Especie(){
 
+    }
+
+    public Especie(String nom, String sex){
+        this.nombre = nom;
+        this.sexo = sex;
+    }
 }
