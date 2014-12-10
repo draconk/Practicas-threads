@@ -2,6 +2,7 @@ package enric.wa_tor;
 
 import enric.helloworld.MainHelloWorld;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -17,6 +18,7 @@ public class Mundo {
     static int tiburM_num = 2; //cantidad de tiburones macho al principio
     public static ArrayList<Hilos> wator = new ArrayList<Hilos>();
     static Hilos[][] warudo = new Hilos[mundo_X][mundo_Y]; //el nombre de la variable es una referencia a Jo Jo's Bizzarre Adventure no es una typo
+    static JLabel[][] warudolbl = new JLabel[mundo_X][mundo_Y]; //usado para dibujar en el JFrame
 
     public static void main(String[] args) {
         System.out.println("Empezando WaTor");
@@ -75,9 +77,13 @@ public class Mundo {
             System.out.println("Nuevo tiburon macho en " + x + " " + y);
         }
 
+        new GUI();
+
         for (int i = 0; i < wator.size();i++){
             wator.get(i).start();
         }
+
+
     }
 
 

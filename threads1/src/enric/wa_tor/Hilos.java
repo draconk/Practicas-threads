@@ -1,5 +1,7 @@
 package enric.wa_tor;
 
+import java.awt.*;
+
 /**
  * Created by Enric on 09/12/2014.
  */
@@ -8,6 +10,7 @@ public class Hilos extends Thread {
     Especie esp;
     int x = 0;
     int y = 0;
+    Color coloranimal;
 
     public Hilos(Especie s, int x, int y) {
         this.esp = s;
@@ -67,6 +70,9 @@ public class Hilos extends Thread {
 
             }
 
+            Mundo.warudolbl[x][y].setBackground(Color.cyan);
+
+            Mundo.warudo[x][y] = null;
 
             movimiento();
 
@@ -94,6 +100,12 @@ public class Hilos extends Thread {
 
                     System.out.println("Ha nasio un " + esp2.nombre + " de sexo " + esp2.sexo);
 
+                    if (esp2.nombre.equals("Atun")){
+                        coloranimal = new Color(0, 255, 0);
+                    }else{
+                        coloranimal = new Color(255, 0, 0);
+                    }
+
                 }else if (aux.esp.nombre.equals("Tiburon") && esp.nombre.equals("Atun")){
                     System.out.println("Ha morido un " + esp.nombre + " de sexo " + esp.sexo + " comido por un Tiburon");
 
@@ -105,6 +117,8 @@ public class Hilos extends Thread {
                 }
             }
             Mundo.warudo[x][y] = this;
+
+            Mundo.warudolbl[x][y].setBackground(coloranimal);
         }
     }
 }
