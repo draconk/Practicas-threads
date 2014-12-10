@@ -19,9 +19,8 @@ public class GUI {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        for(int i=0; i<Mundo.mundo_X; i++){
-
-            for(int j=0; i<Mundo.mundo_Y; i++){
+        for(int i=0; i<Mundo.mundo_X; i++) {
+            for (int j = 0; j < Mundo.mundo_Y; j++) {
 
                 JLabel def = new JLabel(); //default label para inicializar warudolbl
                 def.setOpaque(true);

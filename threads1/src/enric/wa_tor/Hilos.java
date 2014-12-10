@@ -62,15 +62,16 @@ public class Hilos extends Thread {
     }
 
     public final void run() {
-        while (true) {
+        boolean exit = true;
+        while (exit) {
 
             try {
-                Thread.sleep(200);
+                Thread.sleep(200); //duerme 200 NANOSEGUNDOS
             } catch (InterruptedException e ) {
 
             }
 
-            Mundo.warudolbl[x][y].setBackground(Color.cyan);
+            Mundo.warudolbl[x][y].setBackground(new Color(238,238,238));
 
             Mundo.warudo[x][y] = null;
 
@@ -82,7 +83,7 @@ public class Hilos extends Thread {
                 if (aux.esp.nombre.equals(esp.nombre) && aux.esp.sexo.equals(esp.sexo)) {
                     System.out.println("Ha morido un " + esp.nombre + " de sexo " + esp.sexo + " por uno de su misma especie");
 
-                    aux.stop();
+                    this.stop();
 
                 } else if (aux.esp.nombre.equals(esp.nombre) && !aux.esp.sexo.equals(esp.sexo)) {
 
@@ -100,12 +101,6 @@ public class Hilos extends Thread {
 
                     System.out.println("Ha nasio un " + esp2.nombre + " de sexo " + esp2.sexo);
 
-                    if (esp2.nombre.equals("Atun")){
-                        coloranimal = new Color(0, 255, 0);
-                    }else{
-                        coloranimal = new Color(255, 0, 0);
-                    }
-
                 }else if (aux.esp.nombre.equals("Tiburon") && esp.nombre.equals("Atun")){
                     System.out.println("Ha morido un " + esp.nombre + " de sexo " + esp.sexo + " comido por un Tiburon");
 
@@ -118,6 +113,11 @@ public class Hilos extends Thread {
             }
             Mundo.warudo[x][y] = this;
 
+            if (this.esp.nombre.equals("Atun")){
+                coloranimal = new Color(128, 255, 255);
+            }else {
+                coloranimal = new Color(255, 0, 0);
+            }
             Mundo.warudolbl[x][y].setBackground(coloranimal);
         }
     }

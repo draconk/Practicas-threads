@@ -1,7 +1,5 @@
 package enric.wa_tor;
 
-import enric.helloworld.MainHelloWorld;
-
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -10,8 +8,8 @@ import java.util.ArrayList;
  */
 public class Mundo {
 
-    static int mundo_X = 10; //tamaño del mundo X
-    static int mundo_Y = 10; //tamaño del mundo Y
+    static int mundo_X = 20; //tamaño del mundo X
+    static int mundo_Y = 20; //tamaño del mundo Y
     static int atunF_num = 20; //cantidad de atunes hembra al principio
     static int atunM_num = 10; //cantidad de atunes macho al principio
     static int tiburF_num = 2; //cantidad de tiburones hembra al principio
@@ -24,6 +22,7 @@ public class Mundo {
         System.out.println("Empezando WaTor");
         int x = 0;
         int y = 0;
+
 
         for (int i = 0; i < atunF_num; i++){
 
@@ -70,15 +69,15 @@ public class Mundo {
 
             y = (int) (Math.random() * mundo_Y);
 
-            Especie tibM = new Especie("Tiburon", "Macho");
-            Hilos tiburonM = new Hilos(tibM, x, y);
+        Especie tibM = new Especie("Tiburon", "Macho");
+        Hilos tiburonM = new Hilos(tibM, x, y);
 
-            wator.add(tiburonM);
-            System.out.println("Nuevo tiburon macho en " + x + " " + y);
-        }
+        wator.add(tiburonM);
+        System.out.println("Nuevo tiburon macho en " + x + " " + y);
+    }
+
 
         new GUI();
-
         for (int i = 0; i < wator.size();i++){
             wator.get(i).start();
         }
