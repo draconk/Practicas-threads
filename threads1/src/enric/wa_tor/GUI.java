@@ -14,8 +14,9 @@ public class GUI extends JFrame{
 
         frame.setLayout(new GridLayout(Mundo.mundo_X, Mundo.mundo_Y));
 
-        frame.setSize(Mundo.mundo_X * 8, Mundo.mundo_Y * 8);
-        frame.getContentPane().setBackground(new Color(238, 238, 238));
+        frame.setSize(700, 700);
+        //frame.getContentPane().setBackground(new Color(238, 238, 238));
+        frame.getContentPane().setBackground(new Color(200, 116, 40));
         frame.setVisible(true);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -66,12 +66,13 @@ public class Hilos extends Thread {
         while (exit) {
 
             try {
-                Thread.sleep(16); //duerme 16 milisegundos o lo que es lo mismo va a 60fps #JustMasterRaceThings
+                Thread.sleep(1); //duerme 16 milisegundos o lo que es lo mismo va a 60fps #JustMasterRaceThings
             } catch (InterruptedException e ) {
 
             }
 
-            Mundo.warudolbl[x][y].setBackground(new Color(238,238,238));
+            //Mundo.warudolbl[x][y].setBackground(new Color(238,238,238));
+            Mundo.warudolbl[x][y].setBackground(new Color(200, 116, 40));
 
             Mundo.warudo[x][y] = null;
 
@@ -105,15 +106,15 @@ public class Hilos extends Thread {
 
                     if (this.esp.nombre.equals("Atun")){
                         if (this.esp.sexo.equals("Hembra")){
-                            coloranimal = new Color(128, 255, 255);
+                            coloranimal = new Color(6, 1, 8);
                         }else{
                             coloranimal = new Color(0, 0, 255);
                         }
                     }else {
                         if (this.esp.sexo.equals("Hembra")){
-                            coloranimal = new Color(255, 128, 255);
+                            coloranimal = new Color(76, 218, 14);
                         }else{
-                            coloranimal = new Color(255, 0, 0);
+                            coloranimal = new Color(201, 32, 255);
                         }
                     }
                     Mundo.warudolbl[x][y].setBackground(coloranimal);
@@ -133,15 +134,15 @@ public class Hilos extends Thread {
 
                 if (this.esp.nombre.equals("Atun")){
                     if (this.esp.sexo.equals("Hembra")){
-                        coloranimal = new Color(128, 255, 255);
+                        coloranimal = new Color(6, 1, 8);
                     }else{
                         coloranimal = new Color(0, 0, 255);
                     }
                 }else {
                     if (this.esp.sexo.equals("Hembra")){
-                        coloranimal = new Color(255, 128, 255);
+                        coloranimal = new Color(76, 218, 14);
                     }else{
-                        coloranimal = new Color(255, 0, 0);
+                        coloranimal = new Color(201, 32, 255);
                     }
                 }
                 Mundo.warudolbl[x][y].setBackground(coloranimal);
