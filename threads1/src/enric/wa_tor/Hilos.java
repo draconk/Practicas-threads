@@ -66,7 +66,7 @@ public class Hilos extends Thread {
         while (exit) {
 
             try {
-                Thread.sleep(200); //duerme 200 NANOSEGUNDOS
+                Thread.sleep(16); //duerme 16 milisegundos o lo que es lo mismo va a 60fps #JustMasterRaceThings
             } catch (InterruptedException e ) {
 
             }
