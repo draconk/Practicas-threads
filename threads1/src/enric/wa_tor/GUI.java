@@ -13,7 +13,7 @@ public class GUI {
         JFrame frame = new JFrame();
 
         frame.setLayout(new GridLayout(Mundo.mundo_X, Mundo.mundo_Y));
-        frame.setSize(700,700);
+        frame.setSize(Mundo.mundo_X * 8,Mundo.mundo_Y * 8);
         frame.getContentPane().setBackground(Color.cyan);
         frame.setVisible(true);
 

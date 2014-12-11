@@ -101,6 +101,24 @@ public class Hilos extends Thread {
 
                     System.out.println("Ha nasio un " + esp2.nombre + " de sexo " + esp2.sexo);
 
+                    Mundo.warudo[x][y] = this;
+
+                    if (this.esp.nombre.equals("Atun")){
+                        if (this.esp.sexo.equals("Hembra")){
+                            coloranimal = new Color(128, 255, 255);
+                        }else{
+                            coloranimal = new Color(0, 0, 255);
+                        }
+                    }else {
+                        if (this.esp.sexo.equals("Hembra")){
+                            coloranimal = new Color(255, 128, 255);
+                        }else{
+                            coloranimal = new Color(255, 0, 0);
+                        }
+                    }
+                    Mundo.warudolbl[x][y].setBackground(coloranimal);
+
+
                 }else if (aux.esp.nombre.equals("Tiburon") && esp.nombre.equals("Atun")){
                     System.out.println("Ha morido un " + esp.nombre + " de sexo " + esp.sexo + " comido por un Tiburon");
 
@@ -110,15 +128,25 @@ public class Hilos extends Thread {
 
                     aux.stop();
                 }
-            }
-            Mundo.warudo[x][y] = this;
+            }else{
+                Mundo.warudo[x][y] = this;
 
-            if (this.esp.nombre.equals("Atun")){
-                coloranimal = new Color(128, 255, 255);
-            }else {
-                coloranimal = new Color(255, 0, 0);
+                if (this.esp.nombre.equals("Atun")){
+                    if (this.esp.sexo.equals("Hembra")){
+                        coloranimal = new Color(128, 255, 255);
+                    }else{
+                        coloranimal = new Color(0, 0, 255);
+                    }
+                }else {
+                    if (this.esp.sexo.equals("Hembra")){
+                        coloranimal = new Color(255, 128, 255);
+                    }else{
+                        coloranimal = new Color(255, 0, 0);
+                    }
+                }
+                Mundo.warudolbl[x][y].setBackground(coloranimal);
             }
-            Mundo.warudolbl[x][y].setBackground(coloranimal);
+
         }
     }
 }

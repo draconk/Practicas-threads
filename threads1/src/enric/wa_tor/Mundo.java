@@ -8,10 +8,10 @@ import java.util.ArrayList;
  */
 public class Mundo {
 
-    static int mundo_X = 20; //tamaño del mundo X
-    static int mundo_Y = 20; //tamaño del mundo Y
+    static int mundo_X = 10; //tamaño del mundo X
+    static int mundo_Y = 10; //tamaño del mundo Y
     static int atunF_num = 20; //cantidad de atunes hembra al principio
-    static int atunM_num = 10; //cantidad de atunes macho al principio
+    static int atunM_num = 20; //cantidad de atunes macho al principio
     static int tiburF_num = 2; //cantidad de tiburones hembra al principio
     static int tiburM_num = 2; //cantidad de tiburones macho al principio
     public static ArrayList<Hilos> wator = new ArrayList<Hilos>();
