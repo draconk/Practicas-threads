@@ -1,4 +1,4 @@
-package enric.helloworld;
+package AMS2_04_14.helloworld;
 
 /**
  * Created by Enric on 04/12/2014.

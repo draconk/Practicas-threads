@@ -1,4 +1,4 @@
-package enric.wa_tor;
+package AMS2_04_14.wa_tor;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,13 +15,12 @@ public class GUI extends JFrame{
         frame.setLayout(new GridLayout(Mundo.mundo_X, Mundo.mundo_Y));
 
         frame.setSize(700, 700);
-        //frame.getContentPane().setBackground(new Color(238, 238, 238));
-        frame.getContentPane().setBackground(new Color(200, 116, 40));
+        frame.getContentPane().setBackground(new Color(238, 238, 238));
         frame.setVisible(true);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        for(int i=0; i<Mundo.mundo_X; i++) {
+        for(int i=0; i<Mundo.mundo_X; i++) { //cuidado con poner numeros superiores a 100 en la X y la Y porque puede tardar mas de 1 minuto solo para crear los objetos de los labels
             for (int j = 0; j < Mundo.mundo_Y; j++) {
 
                 JLabel def = new JLabel(); //default label para inicializar warudolbl

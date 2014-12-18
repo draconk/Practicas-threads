@@ -1,4 +1,4 @@
-package enric.wa_tor;
+package AMS2_04_14.wa_tor;
 
 /**
  * Created by Enric on 09/12/2014.
@@ -16,4 +16,6 @@ public class Especie {
         this.nombre = nom;
         this.sexo = sex;
     }
+
+
 }

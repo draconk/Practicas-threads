@@ -1,4 +1,4 @@
-package enric.wa_tor;
+package AMS2_04_14.wa_tor;
 
 import java.awt.*;
 
@@ -57,22 +57,21 @@ public class Hilos extends Thread {
                     y--;
                 }
                 break;
-
         }
     }
 
     public final void run() {
-        boolean exit = true;
-        while (exit) {
+        boolean life = true;
+        while (life) {
 
             try {
-                Thread.sleep(1); //duerme 16 milisegundos o lo que es lo mismo va a 60fps #JustMasterRaceThings
+                Thread.sleep(200); //duerme 16 milisegundos o lo que es lo mismo va a 60fps #JustMasterRaceThings
             } catch (InterruptedException e ) {
 
             }
 
-            //Mundo.warudolbl[x][y].setBackground(new Color(238,238,238));
-            Mundo.warudolbl[x][y].setBackground(new Color(200, 116, 40));
+            Mundo.warudolbl[x][y].setBackground(new Color(238,238,238));
+            //Mundo.warudolbl[x][y].setBackground(new Color(200, 116, 40));
 
             Mundo.warudo[x][y] = null;
 
@@ -84,7 +83,8 @@ public class Hilos extends Thread {
                 if (aux.esp.nombre.equals(esp.nombre) && aux.esp.sexo.equals(esp.sexo)) {
                     System.out.println("Ha morido un " + esp.nombre + " de sexo " + esp.sexo + " por uno de su misma especie");
 
-                    this.stop();
+                    life = false;
+                    //this.stop();
 
                 } else if (aux.esp.nombre.equals(esp.nombre) && !aux.esp.sexo.equals(esp.sexo)) {
 
@@ -106,26 +106,41 @@ public class Hilos extends Thread {
 
                     if (this.esp.nombre.equals("Atun")){
                         if (this.esp.sexo.equals("Hembra")){
-                            coloranimal = new Color(6, 1, 8);
+                            coloranimal = new Color(83, 244, 183);
                         }else{
                             coloranimal = new Color(0, 0, 255);
                         }
                     }else {
                         if (this.esp.sexo.equals("Hembra")){
-                            coloranimal = new Color(76, 218, 14);
+                            coloranimal = new Color(226, 98, 168);
                         }else{
-                            coloranimal = new Color(201, 32, 255);
+                            coloranimal = new Color(218, 0, 29);
                         }
                     }
                     Mundo.warudolbl[x][y].setBackground(coloranimal);
 
 
-                }else if (aux.esp.nombre.equals("Tiburon") && esp.nombre.equals("Atun")){
+                }else if (aux.esp.nombre.equals("Tiburon") && this.esp.nombre.equals("Atun")){
                     System.out.println("Ha morido un " + esp.nombre + " de sexo " + esp.sexo + " comido por un Tiburon");
 
-                    this.stop();
-                }else if (esp.nombre.equals("Tiburon") && aux.esp.nombre.equals("Atun")){
+                    life = false;
+                    //this.stop();
+                }else if (this.esp.nombre.equals("Tiburon") && aux.esp.nombre.equals("Atun")){
                     System.out.println("Ha morido un " + aux.esp.nombre + " de sexo " + aux.esp.sexo + " comido por un Tiburon");
+                    if (this.esp.nombre.equals("Atun")){
+                        if (this.esp.sexo.equals("Hembra")){
+                            coloranimal = new Color(83, 244, 183);
+                        }else{
+                            coloranimal = new Color(0, 0, 255);
+                        }
+                    }else {
+                        if (this.esp.sexo.equals("Hembra")){
+                            coloranimal = new Color(226, 98, 168);
+                        }else{
+                            coloranimal = new Color(218, 0, 29);
+                        }
+                    }
+                    Mundo.warudolbl[x][y].setBackground(coloranimal);
 
                     aux.stop();
                 }
@@ -134,15 +149,15 @@ public class Hilos extends Thread {
 
                 if (this.esp.nombre.equals("Atun")){
                     if (this.esp.sexo.equals("Hembra")){
-                        coloranimal = new Color(6, 1, 8);
+                        coloranimal = new Color(83, 244, 183);
                     }else{
                         coloranimal = new Color(0, 0, 255);
                     }
                 }else {
                     if (this.esp.sexo.equals("Hembra")){
-                        coloranimal = new Color(76, 218, 14);
+                        coloranimal = new Color(226, 98, 168);
                     }else{
-                        coloranimal = new Color(201, 32, 255);
+                        coloranimal = new Color(218, 0, 29);
                     }
                 }
                 Mundo.warudolbl[x][y].setBackground(coloranimal);

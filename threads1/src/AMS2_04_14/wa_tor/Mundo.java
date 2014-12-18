@@ -1,4 +1,4 @@
-package enric.wa_tor;
+package AMS2_04_14.wa_tor;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ public class Mundo {
     static int mundo_Y = 20; //tamaño del mundo Y
     static int atunF_num = 20; //cantidad de atunes hembra al principio
     static int atunM_num = 20; //cantidad de atunes macho al principio
-    static int tiburF_num = 2; //cantidad de tiburones hembra al principio
+    static int tiburF_num = 3; //cantidad de tiburones hembra al principio
     static int tiburM_num = 2; //cantidad de tiburones macho al principio
     public static ArrayList<Hilos> wator = new ArrayList<Hilos>();
     static Hilos[][] warudo = new Hilos[mundo_X][mundo_Y]; //el nombre de la variable es una referencia a Jo Jo's Bizzarre Adventure no es una typo
@@ -24,8 +24,9 @@ public class Mundo {
         int x = 0;
         int y = 0;
 
-        new GUI();
+        new GUI(); //crea la interfaz grafica
 
+        //Inicializacion de los tiburones y atunes del principio
         for (int i = 0; i < atunF_num; i++){
 
             x = (int) (Math.random() * mundo_X);
@@ -79,7 +80,7 @@ public class Mundo {
     }
 
 
-
+        //Inicia los hilos que estan metidos en el array de hilos wator
         for (int i = 0; i < wator.size();i++){
             wator.get(i).start();
         }

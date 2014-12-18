@@ -1,4 +1,4 @@
-package enric;
+package AMS2_04_14;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
