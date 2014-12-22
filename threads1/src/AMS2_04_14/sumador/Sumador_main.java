@@ -14,6 +14,7 @@ public class Sumador_main {
                 new Contador().start();
             }
 
+
             Thread.sleep(1000);
         }catch (InterruptedException e){
             e.printStackTrace();

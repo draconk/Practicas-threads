@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class Mundo {
 
-    static int mundo_X = 20; //tamaño del mundo X
-    static int mundo_Y = 20; //tamaño del mundo Y
+    static int mundo_X = 1000; //tamaño del mundo X
+    static int mundo_Y = 1000; //tamaño del mundo Y
     static int atunF_num = 20; //cantidad de atunes hembra al principio
     static int atunM_num = 20; //cantidad de atunes macho al principio
     static int tiburF_num = 3; //cantidad de tiburones hembra al principio
