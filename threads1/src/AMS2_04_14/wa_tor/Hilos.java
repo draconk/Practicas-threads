@@ -11,6 +11,7 @@ public class Hilos extends Thread {
     int x = 0;
     int y = 0;
     Color coloranimal;
+    private boolean life = true;
 
     public Hilos(Especie s, int x, int y) {
         this.esp = s;
@@ -61,7 +62,7 @@ public class Hilos extends Thread {
     }
 
     public final void run() {
-        boolean life = true;
+
         while (life) {
 
             try {
@@ -73,18 +74,19 @@ public class Hilos extends Thread {
             Mundo.warudolbl[x][y].setBackground(new Color(238,238,238));
             //Mundo.warudolbl[x][y].setBackground(new Color(200, 116, 40));
 
-            Mundo.warudo[x][y] = null;
+            Mundo.warudo[x][y] = null; //elimina la posicion actual en el array
 
-            movimiento();
+            movimiento(); //cambia las X y Y de este hilo
 
-            Hilos aux = Mundo.warudo[x][y];
+            Hilos aux = Mundo.warudo[x][y]; //coge lo que haya en la posicion nueva
 
-            if (aux != null) {
-                if (aux.esp.nombre.equals(esp.nombre) && aux.esp.sexo.equals(esp.sexo)) {
+            if (aux != null) { //si el auxiliar no es null empieza con la mini IA
+                if (aux.esp.nombre.equals(esp.nombre) && aux.esp.sexo.equals(esp.sexo)) { //Si este hilo y el otro son de la misma especie se matan entre ellos invocando al metodo Kill
+                    Kill();
+                    aux.Kill();
                     System.out.println("Ha morido un " + esp.nombre + " de sexo " + esp.sexo + " por uno de su misma especie");
 
-                    life = false;
-                    //this.stop();
+
 
                 } else if (aux.esp.nombre.equals(esp.nombre) && !aux.esp.sexo.equals(esp.sexo)) {
 
@@ -120,12 +122,14 @@ public class Hilos extends Thread {
                     Mundo.warudolbl[x][y].setBackground(coloranimal);
 
 
-                }else if (aux.esp.nombre.equals("Tiburon") && this.esp.nombre.equals("Atun")){
+                }else if (aux.esp.nombre.equals("Tiburon") && this.esp.nombre.equals("Atun")){ //Si este hilo es un atun y el otro un tiburon este hilo invoca a Kill y se muere
+                    Kill();
                     System.out.println("Ha morido un " + esp.nombre + " de sexo " + esp.sexo + " comido por un Tiburon");
 
-                    life = false;
-                    //this.stop();
-                }else if (this.esp.nombre.equals("Tiburon") && aux.esp.nombre.equals("Atun")){
+
+
+                }else if (this.esp.nombre.equals("Tiburon") && aux.esp.nombre.equals("Atun")){ //Si este hilo es un tiburon y el otro es un atun invoca al metodo Kill y lo mata y luego este hilo se mueve
+                    aux.Kill();
                     System.out.println("Ha morido un " + aux.esp.nombre + " de sexo " + aux.esp.sexo + " comido por un Tiburon");
                     if (this.esp.nombre.equals("Atun")){
                         if (this.esp.sexo.equals("Hembra")){
@@ -142,7 +146,7 @@ public class Hilos extends Thread {
                     }
                     Mundo.warudolbl[x][y].setBackground(coloranimal);
 
-                    aux.stop();
+
                 }
             }else{
                 Mundo.warudo[x][y] = this;
@@ -164,5 +168,11 @@ public class Hilos extends Thread {
             }
 
         }
+        Mundo.warudolbl[x][y].setBackground(new Color(238,238,238));
     }
+
+    public void Kill(){
+        this.life = false;
+    }
+
 }

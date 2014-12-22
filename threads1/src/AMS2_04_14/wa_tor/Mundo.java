@@ -9,12 +9,12 @@ import java.util.ArrayList;
 
 public class Mundo {
 
-    static int mundo_X = 1000; //tamaño del mundo X
-    static int mundo_Y = 1000; //tamaño del mundo Y
-    static int atunF_num = 20; //cantidad de atunes hembra al principio
-    static int atunM_num = 20; //cantidad de atunes macho al principio
-    static int tiburF_num = 3; //cantidad de tiburones hembra al principio
-    static int tiburM_num = 2; //cantidad de tiburones macho al principio
+    static int mundo_X = 50; //tamaño del mundo X
+    static int mundo_Y = 50; //tamaño del mundo Y
+    static int atunF_num = 200; //cantidad de atunes hembra al principio
+    static int atunM_num = 200; //cantidad de atunes macho al principio
+    static int tiburF_num = 1; //cantidad de tiburones hembra al principio
+    static int tiburM_num = 1; //cantidad de tiburones macho al principio
     public static ArrayList<Hilos> wator = new ArrayList<Hilos>();
     static Hilos[][] warudo = new Hilos[mundo_X][mundo_Y]; //el nombre de la variable es una referencia a Jo Jo's Bizzarre Adventure no es una typo
     static JLabel[][] warudolbl = new JLabel[mundo_X][mundo_Y];//usado para dibujar en el JFrame

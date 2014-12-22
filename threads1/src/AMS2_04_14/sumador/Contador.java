@@ -5,7 +5,7 @@ package AMS2_04_14.sumador;
  */
 public class Contador extends Thread{
 
-    public Contador(){}
+
 
     public void run(){
         for (int n = 0; n < 5000; n++){
