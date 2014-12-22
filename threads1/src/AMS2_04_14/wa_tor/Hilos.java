@@ -82,7 +82,7 @@ public class Hilos extends Thread {
 
             if (aux != null) { //si el auxiliar no es null empieza con la mini IA
                 if (aux.esp.nombre.equals(esp.nombre) && aux.esp.sexo.equals(esp.sexo)) { //Si este hilo y el otro son de la misma especie se matan entre ellos invocando al metodo Kill
-                    Kill();
+                    //Kill();
                     aux.Kill();
                     System.out.println("Ha morido un " + esp.nombre + " de sexo " + esp.sexo + " por uno de su misma especie");
 

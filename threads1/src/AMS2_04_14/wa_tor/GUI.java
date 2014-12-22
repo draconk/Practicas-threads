@@ -6,11 +6,15 @@ import java.awt.*;
 /**
  * Created by AMS2-14 on 10/12/2014.
  */
-public class GUI extends JFrame{
+public class GUI extends JFrame {
 
+    private int startX;
+    private int endX;
+    private int startY;
+    private int endY;
+
+    static JFrame frame = new JFrame();
     public GUI(){
-
-        JFrame frame = new JFrame();
 
         frame.setLayout(new GridLayout(Mundo.mundo_X, Mundo.mundo_Y));
 
