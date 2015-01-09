@@ -16,6 +16,4 @@ public class Especie {
         this.nombre = nom;
         this.sexo = sex;
     }
-
-
 }
