@@ -5,13 +5,15 @@ package AMS2_04_14.sumador;
  */
 public class Sumador_main {
 
-    public static int cont=0;
+
 
     public static void main(String[] args) {
 
+        Item i = new Item();
+
         try {
-            for(int i = 0; i < 4; i++){
-                new Contador().start();
+            for(int j = 0; j < 4; j++){
+                new Contador(i).start();
             }
 
 
@@ -20,7 +22,7 @@ public class Sumador_main {
         }catch (InterruptedException e){
             e.printStackTrace();
         }
-        System.out.println(cont);
+        System.out.println(i.getI());
     }
 
 }
