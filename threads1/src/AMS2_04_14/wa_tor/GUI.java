@@ -3,6 +3,7 @@ package AMS2_04_14.wa_tor;
 import javax.swing.*;
 import java.awt.*;
 
+
 /**
  * Created by AMS2-14 on 10/12/2014.
  */
@@ -18,7 +19,7 @@ public class GUI extends JFrame {
 
         frame.setLayout(new GridLayout(Mundo.mundo_X, Mundo.mundo_Y));
 
-        frame.setSize(700, 700);
+        frame.setSize(Mundo.mundo_X * 8, Mundo.mundo_Y * 8);
         frame.getContentPane().setBackground(new Color(238, 238, 238));
         frame.setVisible(true);
 

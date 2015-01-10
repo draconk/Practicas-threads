@@ -5,17 +5,13 @@ package AMS2_04_14.sumador;
  */
 public class Contador extends Thread{
 
-    Item i;
+    public Contador(){ //constructor vacio porque no hace falta usarlo y me gusta ponerlo aunque no haga falta
 
-    public Contador(Item x){
-        i = x;
     }
 
     public void run(){
-        for (int n = 0; n < 5000; n++){
-            i.setI(i.getI() + 1);
+        for (int n = 0; n < 5000; n++){ //el for este ejecuta el metodo setI que esta en el Sumador_main.java que incrementa en 1 la variable i
+            Sumador_main.setI();
         }
-
     }
-
 }
