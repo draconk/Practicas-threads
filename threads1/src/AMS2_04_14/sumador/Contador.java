@@ -5,15 +5,13 @@ package AMS2_04_14.sumador;
  */
 public class Contador extends Thread{
 
-    Item i;
+    public Contador(){
 
-    public Contador(Item x){
-        i = x;
     }
 
     public void run(){
         for (int n = 0; n < 5000; n++){
-            i.setI(i.getI() + 1);
+            Sumador_main.setI();
         }
 
     }

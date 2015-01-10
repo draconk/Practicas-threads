@@ -5,24 +5,26 @@ package AMS2_04_14.sumador;
  */
 public class Sumador_main {
 
+    static int i = 0;
 
+    public synchronized static void setI(){
+        i++;
+    }
 
     public static void main(String[] args) {
 
-        Item i = new Item();
-
         try {
             for(int j = 0; j < 4; j++){
-                new Contador(i).start();
+                new Contador().start();
             }
 
 
 
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         }catch (InterruptedException e){
             e.printStackTrace();
         }
-        System.out.println(i.getI());
+        System.out.println(i);
     }
 
 }

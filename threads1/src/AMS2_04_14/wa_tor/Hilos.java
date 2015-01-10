@@ -84,7 +84,7 @@ public class Hilos extends Thread {
                 if (aux.esp.nombre.equals(esp.nombre) && aux.esp.sexo.equals(esp.sexo)) { //Si este hilo y el otro son de la misma especie se matan entre ellos invocando al metodo Kill
                     //Kill();
                     aux.Kill();
-                    System.out.println("Ha morido un " + esp.nombre + " de sexo " + esp.sexo + " por uno de su misma especie");
+                    System.out.println("Han morido dos " + esp.nombre + " de sexo " + esp.sexo + " por uno de su misma especie");
 
 
 
@@ -131,6 +131,8 @@ public class Hilos extends Thread {
                 }else if (this.esp.nombre.equals("Tiburon") && aux.esp.nombre.equals("Atun")){ //Si este hilo es un tiburon y el otro es un atun invoca al metodo Kill y lo mata y luego este hilo se mueve
                     aux.Kill();
                     System.out.println("Ha morido un " + aux.esp.nombre + " de sexo " + aux.esp.sexo + " comido por un Tiburon");
+
+                    Mundo.warudo[x][y] = this;
                     if (this.esp.nombre.equals("Atun")){
                         if (this.esp.sexo.equals("Hembra")){
                             coloranimal = new Color(83, 244, 183);
