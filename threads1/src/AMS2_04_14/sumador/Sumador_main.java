@@ -18,7 +18,6 @@ public class Sumador_main {
             }
 
             Thread.sleep(5000); //se espera 5 segundos antes de printar nada por aquello de darle tiempo a los threads para asegurarse de que ya han terminado
-
         }catch (InterruptedException e){
             e.printStackTrace();
         }
